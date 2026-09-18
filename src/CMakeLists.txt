@@ -1,0 +1,4 @@
+set(SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/sim.c
+            ${CMAKE_CURRENT_SOURCE_DIR}/app.c)
+
+target_sources(${TARGET} PRIVATE ${SOURCES} ${CMAKE_CURRENT_SOURCE_DIR}/main.c)
