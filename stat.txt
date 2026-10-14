@@ -1,0 +1,120 @@
+
+=== Паттерны из 1 инструкций ===
+Всего окон: 46,435,733; уникальных паттернов: 68
+  #     вхождений     доля  паттерн
+  1     3,832,444    8.25%  sdiv <- mul
+  2     3,772,444    8.12%  add <- sdiv
+  3     3,756,800    8.09%  icmp <- add
+  4     3,747,444    8.07%  mul <- sub
+  5     3,727,444    8.03%  select <- icmp
+  6     3,727,444    8.03%  add <- add
+  7     3,727,444    8.03%  sdiv <- call
+  8     3,727,444    8.03%  mul <- phi
+  9     2,602,933    5.61%  br <- icmp
+ 10     1,899,320    4.09%  add <- phi
+ 11     1,885,340    4.06%  call <- trunc
+ 12     1,867,818    4.02%  icmp <- phi
+ 13     1,863,727    4.01%  icmp <- call
+ 14     1,863,722    4.01%  br <- select
+ 15     1,088,435    2.34%  call <- add
+ 16       685,375    1.48%  add <- trunc
+ 17       340,000    0.73%  mul <- load
+ 18       230,000    0.50%  getelementptr <- alloca
+ 19       204,096    0.44%  load <- getelementptr
+ 20       180,000    0.39%  call <- call
+
+=== Паттерны из 2 инструкций ===
+Всего окон: 46,435,732; уникальных паттернов: 149
+  #     вхождений     доля  паттерн
+  1     3,747,444    8.07%  mul <- sub | sdiv <- mul
+  2     3,727,444    8.03%  add <- add | add <- sdiv
+  3     3,727,444    8.03%  sdiv <- call | add <- add
+  4     3,727,444    8.03%  mul <- phi | mul <- sub
+  5     3,727,444    8.03%  sdiv <- mul | sdiv <- call
+  6     1,863,727    4.01%  icmp <- call | br <- icmp
+  7     1,863,722    4.01%  select <- icmp | br <- select
+  8     1,863,722    4.01%  select <- icmp | select <- icmp
+  9     1,863,722    4.01%  add <- sdiv | mul <- phi
+ 10     1,863,722    4.01%  add <- sdiv | icmp <- add
+ 11     1,863,722    4.01%  icmp <- add | select <- icmp
+ 12     1,863,722    4.01%  icmp <- add | icmp <- add
+ 13     1,863,722    4.01%  add <- phi | icmp <- phi
+ 14     1,863,722    4.01%  icmp <- phi | icmp <- call
+ 15     1,843,722    3.97%  br <- icmp | mul <- phi
+ 16     1,692,192    3.64%  br <- select | add <- phi
+ 17       685,878    1.48%  call <- trunc | call <- trunc
+ 18       685,612    1.48%  call <- trunc | br <- icmp
+ 19       685,375    1.48%  call <- add | call <- trunc
+ 20       685,375    1.48%  br <- icmp | add <- trunc
+
+=== Паттерны из 3 инструкций ===
+Всего окон: 46,435,731; уникальных паттернов: 201
+  #     вхождений     доля  паттерн
+  1     3,727,444    8.03%  sdiv <- call | add <- add | add <- sdiv
+  2     3,727,444    8.03%  mul <- phi | mul <- sub | sdiv <- mul
+  3     3,727,444    8.03%  mul <- sub | sdiv <- mul | sdiv <- call
+  4     3,727,444    8.03%  sdiv <- mul | sdiv <- call | add <- add
+  5     1,863,722    4.01%  select <- icmp | select <- icmp | br <- select
+  6     1,863,722    4.01%  add <- add | add <- sdiv | mul <- phi
+  7     1,863,722    4.01%  add <- add | add <- sdiv | icmp <- add
+  8     1,863,722    4.01%  add <- sdiv | mul <- phi | mul <- sub
+  9     1,863,722    4.01%  add <- sdiv | icmp <- add | icmp <- add
+ 10     1,863,722    4.01%  icmp <- add | select <- icmp | select <- icmp
+ 11     1,863,722    4.01%  icmp <- add | icmp <- add | select <- icmp
+ 12     1,863,722    4.01%  add <- phi | icmp <- phi | icmp <- call
+ 13     1,863,722    4.01%  icmp <- phi | icmp <- call | br <- icmp
+ 14     1,843,722    3.97%  icmp <- call | br <- icmp | mul <- phi
+ 15     1,843,722    3.97%  br <- icmp | mul <- phi | mul <- sub
+ 16     1,692,192    3.64%  br <- select | add <- phi | icmp <- phi
+ 17     1,692,192    3.64%  select <- icmp | br <- select | add <- phi
+ 18       685,233    1.48%  call <- trunc | br <- icmp | add <- trunc
+ 19       514,348    1.11%  call <- trunc | call <- trunc | br <- icmp
+ 20       342,818    0.74%  add <- trunc | call <- add | call <- trunc
+
+=== Паттерны из 4 инструкций ===
+Всего окон: 46,435,730; уникальных паттернов: 242
+  #     вхождений     доля  паттерн
+  1     3,727,444    8.03%  mul <- phi | mul <- sub | sdiv <- mul | sdiv <- call
+  2     3,727,444    8.03%  mul <- sub | sdiv <- mul | sdiv <- call | add <- add
+  3     3,727,444    8.03%  sdiv <- mul | sdiv <- call | add <- add | add <- sdiv
+  4     1,863,722    4.01%  add <- add | add <- sdiv | mul <- phi | mul <- sub
+  5     1,863,722    4.01%  add <- add | add <- sdiv | icmp <- add | icmp <- add
+  6     1,863,722    4.01%  sdiv <- call | add <- add | add <- sdiv | mul <- phi
+  7     1,863,722    4.01%  sdiv <- call | add <- add | add <- sdiv | icmp <- add
+  8     1,863,722    4.01%  add <- sdiv | mul <- phi | mul <- sub | sdiv <- mul
+  9     1,863,722    4.01%  add <- sdiv | icmp <- add | icmp <- add | select <- icmp
+ 10     1,863,722    4.01%  icmp <- add | select <- icmp | select <- icmp | br <- select
+ 11     1,863,722    4.01%  icmp <- add | icmp <- add | select <- icmp | select <- icmp
+ 12     1,863,722    4.01%  add <- phi | icmp <- phi | icmp <- call | br <- icmp
+ 13     1,843,722    3.97%  icmp <- call | br <- icmp | mul <- phi | mul <- sub
+ 14     1,843,722    3.97%  br <- icmp | mul <- phi | mul <- sub | sdiv <- mul
+ 15     1,843,722    3.97%  icmp <- phi | icmp <- call | br <- icmp | mul <- phi
+ 16     1,692,192    3.64%  br <- select | add <- phi | icmp <- phi | icmp <- call
+ 17     1,692,192    3.64%  select <- icmp | br <- select | add <- phi | icmp <- phi
+ 18     1,692,192    3.64%  select <- icmp | select <- icmp | br <- select | add <- phi
+ 19       514,206    1.11%  call <- trunc | call <- trunc | br <- icmp | add <- trunc
+ 20       342,818    0.74%  add <- trunc | call <- add | call <- trunc | call <- trunc
+
+=== Паттерны из 5 инструкций ===
+Всего окон: 46,435,729; уникальных паттернов: 277
+  #     вхождений     доля  паттерн
+  1     3,727,444    8.03%  mul <- phi | mul <- sub | sdiv <- mul | sdiv <- call | add <- add
+  2     3,727,444    8.03%  mul <- sub | sdiv <- mul | sdiv <- call | add <- add | add <- sdiv
+  3     1,863,722    4.01%  add <- add | add <- sdiv | mul <- phi | mul <- sub | sdiv <- mul
+  4     1,863,722    4.01%  add <- add | add <- sdiv | icmp <- add | icmp <- add | select <- icmp
+  5     1,863,722    4.01%  sdiv <- call | add <- add | add <- sdiv | mul <- phi | mul <- sub
+  6     1,863,722    4.01%  sdiv <- call | add <- add | add <- sdiv | icmp <- add | icmp <- add
+  7     1,863,722    4.01%  add <- sdiv | mul <- phi | mul <- sub | sdiv <- mul | sdiv <- call
+  8     1,863,722    4.01%  add <- sdiv | icmp <- add | icmp <- add | select <- icmp | select <- icmp
+  9     1,863,722    4.01%  sdiv <- mul | sdiv <- call | add <- add | add <- sdiv | mul <- phi
+ 10     1,863,722    4.01%  sdiv <- mul | sdiv <- call | add <- add | add <- sdiv | icmp <- add
+ 11     1,863,722    4.01%  icmp <- add | icmp <- add | select <- icmp | select <- icmp | br <- select
+ 12     1,843,722    3.97%  icmp <- call | br <- icmp | mul <- phi | mul <- sub | sdiv <- mul
+ 13     1,843,722    3.97%  add <- phi | icmp <- phi | icmp <- call | br <- icmp | mul <- phi
+ 14     1,843,722    3.97%  br <- icmp | mul <- phi | mul <- sub | sdiv <- mul | sdiv <- call
+ 15     1,843,722    3.97%  icmp <- phi | icmp <- call | br <- icmp | mul <- phi | mul <- sub
+ 16     1,692,192    3.64%  br <- select | add <- phi | icmp <- phi | icmp <- call | br <- icmp
+ 17     1,692,192    3.64%  select <- icmp | br <- select | add <- phi | icmp <- phi | icmp <- call
+ 18     1,692,192    3.64%  select <- icmp | select <- icmp | br <- select | add <- phi | icmp <- phi
+ 19     1,692,192    3.64%  icmp <- add | select <- icmp | select <- icmp | br <- select | add <- phi
+ 20       342,818    0.74%  add <- trunc | call <- add | call <- trunc | call <- trunc | br <- icmp

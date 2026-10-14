@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.28)
 project(warp_tunnel)
 
+set(CMAKE_C_COMPILER   clang)
+set(CMAKE_CXX_COMPILER clang++)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 set(TARGET warp_tunnel)
 
 # set(CMAKE_CXX_STANDARD 23)
@@ -13,8 +17,8 @@ target_include_directories(${TARGET} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
 
 # Compile options
 target_compile_options(${TARGET} PUBLIC
-    -Wall 
-    -Wextra 
+    -g
+    -Os
     $<$<CONFIG:DEBUG>:-g -fsanitize=address>
     $<$<CONFIG:RELEASE>:-O3>
 )
