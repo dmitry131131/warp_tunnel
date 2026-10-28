@@ -26,6 +26,7 @@ target_compile_options(${TARGET} PUBLIC
 target_link_options(${TARGET} PRIVATE -lSDL2)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/IRGen)
 
 set_target_properties(${TARGET}
                       PROPERTIES

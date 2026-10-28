@@ -15,3 +15,10 @@ A small graphical app written on C lang. This app renders the beautiful view of 
 
     cmake --build ./Release
 ```
+
+# IR generator build
+
+```bash
+    cmake --build build/Release --target app_ir_gen
+    ./build/Release/bin/app_ir_gen > IR/app_gen.ll
+```
