@@ -10,7 +10,7 @@
 #include <variant>
 #include <vector>
 
-namespace warp {
+namespace sim {
 
 inline constexpr unsigned register_count = 64;
 
@@ -74,4 +74,4 @@ Program parse(std::string_view source);
 // Reads the entire file before parsing. I/O errors throw std::runtime_error.
 Program parse_file(const std::filesystem::path& path);
 
-} // namespace warp
+} // namespace sim

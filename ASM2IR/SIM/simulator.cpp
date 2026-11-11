@@ -8,7 +8,7 @@ extern "C" {
 #include "sim.h"
 }
 
-namespace warp {
+namespace sim {
 namespace {
 
 std::uint64_t mask(unsigned width) {
@@ -114,7 +114,7 @@ void Simulator::close_sim() {
     }
 }
 
-void Simulator::run() {
+void Simulator::reset() {
     registers_.fill(0);
     std::fill(initialized_.begin(), initialized_.end(), false);
     allocations_.clear();
@@ -123,7 +123,10 @@ void Simulator::run() {
     pc_ = program_.entry_point;
     source_line_ = 0;
     halted_ = false;
+}
 
+void Simulator::run() {
+    reset();
     try {
         while (!halted_) {
             if (pc_ >= program_.instructions.size()) {
@@ -373,4 +376,4 @@ void Simulator::handle_getclick(const Instruction& instruction) {
     write(instruction, static_cast<std::uint32_t>(simGetClick()));
 }
 
-} // namespace warp
+} // namespace sim

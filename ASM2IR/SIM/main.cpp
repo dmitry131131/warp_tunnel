@@ -11,16 +11,16 @@ int main(int argc, char* argv[]) {
     }
 
     try {
-        const auto program = warp::parse_file(argv[1]);
+        const auto program = sim::parse_file(argv[1]);
         std::cout << "Parsed " << program.instructions.size() << " instructions, "
                   << program.labels.size() << " labels, entry instruction "
                   << program.entry_point << '\n';
-        warp::Simulator simulator(program);
+        sim::Simulator simulator(program);
         simulator.run();
-    } catch (const warp::ExecutionError& error) {
+    } catch (const sim::ExecutionError& error) {
         std::cerr << argv[1] << ':' << error.line() << ": " << error.what() << '\n';
         return 1;
-    } catch (const warp::ParseError& error) {
+    } catch (const sim::ParseError& error) {
         std::cerr << argv[1] << ':' << error.line() << ": " << error.what() << '\n';
         return 1;
     } catch (const std::exception& error) {

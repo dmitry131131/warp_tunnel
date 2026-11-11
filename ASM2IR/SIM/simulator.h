@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-namespace warp {
+namespace sim {
 
 class ExecutionError : public std::runtime_error {
 public:
@@ -29,6 +29,8 @@ public:
     const std::array<std::uint64_t, register_count>& registers() const { return registers_; }
 
 private:
+    friend class JitRunner;
+
     struct Allocation {
         std::size_t begin;
         std::size_t end;
@@ -56,6 +58,7 @@ private:
     void ensure_sim();
     void close_sim();
     void dispatch(const Instruction& instruction);
+    void reset();
 
     void handle_mov(const Instruction&);
     void handle_add(const Instruction&);
@@ -89,4 +92,4 @@ private:
     void handle_getclick(const Instruction&);
 };
 
-} // namespace warp
+} // namespace sim

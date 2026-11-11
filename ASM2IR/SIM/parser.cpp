@@ -8,7 +8,7 @@
 #include <limits>
 #include <system_error>
 
-namespace warp {
+namespace sim {
 namespace {
 
 enum class OperandKind { Register, Value, Label, AllocationSize };
@@ -296,4 +296,4 @@ Program parse_file(const std::filesystem::path& path) {
     return parse(source);
 }
 
-} // namespace warp
+} // namespace sim
