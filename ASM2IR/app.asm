@@ -1,7 +1,3 @@
-; Warp ASM. Entry app. Register conventions are described in README.md.
-; x0..x7 = star x/y/z, red/green/blue shifts, cos/sin tables.
-; x8 = atan table, x9 = star index, x10 = frame index.
-
 app:
     alloc x0, 5000
     alloc x1, 5000
